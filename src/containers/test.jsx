@@ -1,4 +1,4 @@
-import "../css/test.css"
+cd import "../css/test.css"
 
 
 export default function Test() {
@@ -6,17 +6,6 @@ export default function Test() {
 
         <>
             <>
-                <meta charSet="UTF-8" />
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link rel="stylesheet" href="./styles.css" />
-                <title>User List Demo</title>
-                {/* Header component */}
-                <header className="header">
-                    <div className="logo">
-                        <span className="course">React Workshop - September 2023</span>
-                    </div>
-                </header>
                 {/* Main component  */}
                 <main className="main">
                     {/* Section component  */}
@@ -72,8 +61,7 @@ export default function Test() {
                             {/* <div class="loading-shade"> */}
                             {/* Loading spinner  */}
                             {/* <div class="spinner"></div> */}
-                            {/*
-  No users added yet  */}
+                            {/*  No users added yet  */}
                             {/* <div class="table-overlap">
         <svg
           aria-hidden="true"
