@@ -22,7 +22,7 @@ function App() {
 
             <HeaderSection/>
 
-            <Test />
+            {/*<Test />*/}
 
             <BannerSection/>
 
