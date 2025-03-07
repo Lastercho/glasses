@@ -8,7 +8,7 @@ import TestimonialSection from "./containers/testimonialSection.jsx";
 import ContactSection from "./containers/contactSection.jsx";
 import SectionFooter from "./containers/sectionFooter.jsx";
 import CopyrightSection from "./containers/copyrightSection.jsx";
-import Test from "./containers/test.jsx";
+// import Test from "./containers/test.jsx";
 
 
 function App() {
