@@ -8,7 +8,7 @@ import ContactSection from "./containers/contactSection.jsx";
 import SectionFooter from "./containers/sectionFooter.jsx";
 import CopyrightSection from "./containers/copyrightSection.jsx";
 // import Test from "./containers/test.jsx";
-
+import UserManagement from "./containers/userManagement/UserManagement.jsx";
 
 function App() {
 
@@ -20,6 +20,7 @@ function App() {
 
 
             <HeaderSection/>
+            <UserManagement/>
 
             {/* <Test /> */}
 
