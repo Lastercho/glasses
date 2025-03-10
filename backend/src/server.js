@@ -8,7 +8,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
 // Use user routes
 app.use('/api/users', userRoutes);
 
