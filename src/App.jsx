@@ -1,4 +1,3 @@
-import './App.css'
 import HeaderSection from "./containers/headerSection.jsx";
 import BannerSection from "./containers/bannerSection.jsx";
 import AboutSection from "./containers/aboutSection.jsx";
@@ -22,7 +21,7 @@ function App() {
 
             <HeaderSection/>
 
-            {/*<Test />*/}
+            {/* <Test /> */}
 
             <BannerSection/>
 
