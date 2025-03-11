@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import '../../css/register.css';
 
-const Register = () => {
+export default function Register ()  {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -40,11 +40,11 @@ const Register = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/api/users/register', formData);
-            setSuccess('Успешна регистрация!');
+            setSuccess('Registration successful!');
             setError('');
             console.log('Registration successful:', response.data);
         } catch (err) {
-            setError(err.response?.data?.message || 'Грешка при регистрацията');
+            setError(err.response?.data?.message || 'Registration error');
             setSuccess('');
         }
     };
@@ -52,33 +52,25 @@ const Register = () => {
     return (
         <div className="register-container">
             <div className="register-card">
-                <div>
-                    <h2 className="register-title">
-                        Регистрация
-                    </h2>
-                    <p className="register-subtitle">
-                        Създайте нов акаунт и започнете да използвате нашите услуги
-                    </p>
-                </div>
                 <form className="register-form" onSubmit={handleSubmit}>
                     <div className="form-user-info">
                     <div className="form-group">
                         <label htmlFor="username" className="form-label">
-                            Потребителско име
+                            User name
                         </label>
                         <input
                             name="username"
                             type="text"
                             required
                             className="form-input"
-                            placeholder="Изберете потребителско име"
+                            placeholder="Write your username"
                             value={formData.username}
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email" className="form-label">
-                            Имейл адрес
+                            Email
                         </label>
                         <input
                             name="email"
@@ -93,7 +85,7 @@ const Register = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="password" className="form-label">
-                            Парола
+                            Password
                         </label>
                         <input
                             name="password"
@@ -106,35 +98,36 @@ const Register = () => {
                         />
                     </div>
                     <div className="address-section">
-                        <h3 className="address-title">Адрес
+                        <h3 className="address-title">
+                            Address
                         </h3>
 
                         <div className="address-fields">
                             <section>
                             <div className="form-group">
                                 <label htmlFor="street" className="form-label">
-                                    Улица
+                                    Street
                                 </label>
                                 <input
                                     name="address.street"
                                     type="text"
                                     required
                                     className="form-input"
-                                    placeholder="Улица и номер"
+                                    placeholder="Street and number"
                                     value={formData.address.street}
                                     onChange={handleChange}
                                 />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="city" className="form-label">
-                                    Град
+                                    City
                                 </label>
                                 <input
                                     name="address.city"
                                     type="text"
                                     required
                                     className="form-input"
-                                    placeholder="Град"
+                                    placeholder="City"
                                     value={formData.address.city}
                                     onChange={handleChange}
                                 />
@@ -143,28 +136,28 @@ const Register = () => {
                             <section>
                             <div className="form-group">
                                 <label htmlFor="country" className="form-label">
-                                    Държава
+                                    Country
                                 </label>
                                 <input
                                     name="address.country"
                                     type="text"
                                     required
                                     className="form-input"
-                                    placeholder="Държава"
+                                    placeholder="Country"
                                     value={formData.address.country}
                                     onChange={handleChange}
                                 />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="postal_code" className="form-label">
-                                    Пощенски код
+                                    Postal Code
                                 </label>
                                 <input
                                     name="address.postal_code"
                                     type="text"
                                     required
                                     className="form-input"
-                                    placeholder="Пощенски код"
+                                    placeholder="Postal Code"
                                     value={formData.address.postal_code}
                                     onChange={handleChange}
                                 />
@@ -202,7 +195,7 @@ const Register = () => {
                                     <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
                                 </svg>
                             </span>
-                            Регистрация
+                            Registration
                         </button>
                     </div>
                 </form>
@@ -210,5 +203,3 @@ const Register = () => {
         </div>
     );
 };
-
-export default Register; 
