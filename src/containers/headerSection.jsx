@@ -21,32 +21,32 @@ export default function HeaderSection (){
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="/">
                                     HOME
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="/about">
                                     ABOUT
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="/products">
                                     OUR PRODUCTS
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    VIDEO GAMES
+                                <a className="nav-link" href="/testimonials">
+                                    TESTIMONIALS
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    REMOT CONTROL
+                                <a className="nav-link" href="/promotions">
+                                    PROMOTIONS
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="/contact">
                                     CONTACT US
                                 </a>
                             </li>
@@ -56,12 +56,12 @@ export default function HeaderSection (){
                                 </a>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="/login">
                                     SIGN IN
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="/register">
                                     REGISTER
                                 </a>
                             </li>

@@ -8,7 +8,26 @@ import ContactSection from "./containers/contactSection.jsx";
 import SectionFooter from "./containers/sectionFooter.jsx";
 import CopyrightSection from "./containers/copyrightSection.jsx";
 // import Test from "./containers/test.jsx";
-import UserManagement from "./containers/userManagement/UserManagement.jsx";
+// import UserManagement from "./containers/userManagement/UserManagement.jsx";
+import {Route, Routes} from "react-router";
+import Login from "./containers/userManagement/Login.jsx";
+import Register from "./containers/userManagement/Register.jsx";
+
+
+const navigation = [
+    {name: "BannerSection", path: "/", component: <BannerSection/>},
+    {name: "AboutSection", path: "/about", component: <AboutSection/>},
+    {name: "ProductSection", path: "/products", component: <ProductSection/>},
+    {name: "PromoSection", path: "/promo", component: <PromoSection/>},
+    {name: "ContactSection", path: "/contact", component: <ContactSection/>},
+    {name: "TestimonialSection", path: "/testimonial", component: <TestimonialSection/>},
+    {name: "Login", path: "/login", component: <Login/>},
+    {name: "Register", path: "/register", component: <Register/>},
+
+
+]
+
+
 
 function App() {
 
@@ -17,25 +36,27 @@ function App() {
 
 
         <>
-
-
             <HeaderSection/>
-            <UserManagement/>
 
-            {/* <Test /> */}
+            <Routes>
+                <Route path="/" element={<BannerSection/>}/>
 
-            <BannerSection/>
+                <Route path="/about" element={<AboutSection/>}/>
 
-            <AboutSection/>
+                <Route path="/products" element={<ProductSection/>}/>
 
-            <ProductSection/>
+                <Route path="/testimonials" element={<TestimonialSection/>}/>
 
-            <PromoSection/>
+                <Route path="/promotions" element={<PromoSection/>}/>
 
-            <TestimonialSection/>
+                <Route path="/contact" element={<ContactSection/>}/>
 
-            <ContactSection/>
+                <Route path="/login" element={<Login/>} />
 
+                <Route path="/register" element={<Register/>} />
+
+
+</Routes>
             <SectionFooter/>
 
             <CopyrightSection/>
