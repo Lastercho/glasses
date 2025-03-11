@@ -291,21 +291,21 @@ button {
     padding-top: 50px;
 }
 
-.shop_bt {
-    width: 35%;
-    float: left;
-    font-size: 18px;
-    text-align: center;
-    background-color: #fcfcfd;
-    color: #191919;
-    border-left: 10px solid #599ee9;
-    border-radius: 30px;
-    border-right: 10px solid #599ee9;
-    border-top: 4px solid #599ee9;
-    border-bottom: 4px solid #599ee9;
-    padding: 5px 0;
-    margin-top: 40px;
-}
+/*.shop_bt,  .shop_bt2{*/
+/*    width: 35%;*/
+/*    float: left;*/
+/*    font-size: 18px;*/
+/*    text-align: center;*/
+/*    background-color: #fcfcfd;*/
+/*    color: #191919;*/
+/*    border-left: 10px solid #599ee9;*/
+/*    border-radius: 30px;*/
+/*    border-right: 10px solid #599ee9;*/
+/*    border-top: 4px solid #599ee9;*/
+/*    border-bottom: 4px solid #599ee9;*/
+/*    padding: 5px 0;*/
+/*    margin-top: 40px;*/
+/*}*/
 
 .shop_bt a{
     color: #191919;
@@ -373,11 +373,11 @@ button {
     text-align: right;
 }
 
-.shop_bt_2 {
+.shop_bt_2{
     width: 35%;
     float: right;
-    /*font-size: 18px;*/
-    /*text-align: center;*/
+    font-size: 18px;
+    text-align: center;
     background-color: #fcfcfd;
     color: #191919;
     border-left: 10px solid #599ee9;
@@ -450,9 +450,9 @@ button {
 
 .see_bt {
     width: 100%;
-    /*float: right;*/
-    /*font-size: 18px;*/
-    /*text-align: center;*/
+    float: right;
+    font-size: 18px;
+    text-align: center;
     background-color: #fcfcfd;
     color: #191919;
     border-left: 10px solid #599ee9;
