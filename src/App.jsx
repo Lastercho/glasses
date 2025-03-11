@@ -14,21 +14,6 @@ import Login from "./containers/userManagement/Login.jsx";
 import Register from "./containers/userManagement/Register.jsx";
 
 
-const navigation = [
-    {name: "BannerSection", path: "/", component: <BannerSection/>},
-    {name: "AboutSection", path: "/about", component: <AboutSection/>},
-    {name: "ProductSection", path: "/products", component: <ProductSection/>},
-    {name: "PromoSection", path: "/promo", component: <PromoSection/>},
-    {name: "ContactSection", path: "/contact", component: <ContactSection/>},
-    {name: "TestimonialSection", path: "/testimonial", component: <TestimonialSection/>},
-    {name: "Login", path: "/login", component: <Login/>},
-    {name: "Register", path: "/register", component: <Register/>},
-
-
-]
-
-
-
 function App() {
 
     return (

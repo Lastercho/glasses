@@ -4,8 +4,8 @@ export default function PromoSection() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
-                        <h1 className="video_text_2">3d video game</h1>
-                        <h1 className="controller_text_2">remoto control</h1>
+                        <h1 className="video_text_2">special glasses inserts</h1>
+                        <h1 className="controller_text_2">for VR sets</h1>
                         <p className="banner_text_2">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

@@ -53,7 +53,7 @@ export default function ContactSection() {
                     </div>
                     <div className="col-md-6">
                         <div className="image_6">
-                            <img src="/images/img-6.png" alt={""}/>
+                            <img src="/images/glassesall.svg" alt={""}/>
                         </div>
                     </div>
                 </div>
