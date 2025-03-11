@@ -21,7 +21,7 @@ html {
 }
 
 @-ms-viewport {
-  width: device-width;
+  /*width: device-width;*/
 }
 
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -61,7 +61,7 @@ p {
 
 abbr[title],
 abbr[data-original-title] {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
@@ -210,7 +210,7 @@ button {
 }
 
 button:focus {
-  outline: 1px dotted;
+  /*outline: 1px dotted;*/
   outline: 5px auto -webkit-focus-ring-color;
 }
 

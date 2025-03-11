@@ -3,14 +3,14 @@ body {
 }
 @font-face {
     font-family: 'IcoMoon-Free';
-    src: url('../fonts/IcoMoon-Free.ttf') format('truetype');
+    /*src: url('../fonts/IcoMoon-Free.ttf') format('true type');*/
     font-weight: normal;
     font-style: normal;
 }
 
 .icon {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'IcoMoon-Free' !important;
+    font-family: 'IcoMoon-Free', serif !important;
     speak: none;
     font-style: normal;
     font-weight: normal;

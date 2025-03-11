@@ -376,8 +376,8 @@ button {
 .shop_bt_2 {
     width: 35%;
     float: right;
-    font-size: 18px;
-    text-align: center;
+    /*font-size: 18px;*/
+    /*text-align: center;*/
     background-color: #fcfcfd;
     color: #191919;
     border-left: 10px solid #599ee9;
@@ -450,9 +450,9 @@ button {
 
 .see_bt {
     width: 100%;
-    float: right;
-    font-size: 18px;
-    text-align: center;
+    /*float: right;*/
+    /*font-size: 18px;*/
+    /*text-align: center;*/
     background-color: #fcfcfd;
     color: #191919;
     border-left: 10px solid #599ee9;

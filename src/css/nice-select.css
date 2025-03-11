@@ -23,7 +23,7 @@
   width: 50%;
   cursor: pointer;
   font-family: inherit;
-  font-weight: normal;
+  /*font-weight: normal;*/
   line-height: 50px;
   text-align: left !important;
   white-space: nowrap;
