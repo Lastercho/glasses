@@ -7246,7 +7246,7 @@ button.bg-dark:focus {
 }
 
 .position-sticky {
-  position: -webkit-sticky !important;
+  /*position: -webkit-sticky !important;*/
   position: sticky !important;
 }
 
@@ -8861,7 +8861,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-hide {
-  font: 0/0 a;
+  /*font: 0/0 a;*/
   color: transparent;
   text-shadow: none;
   background-color: transparent;
