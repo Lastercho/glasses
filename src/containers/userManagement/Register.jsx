@@ -61,6 +61,7 @@ const Register = () => {
                     </p>
                 </div>
                 <form className="register-form" onSubmit={handleSubmit}>
+                    <div className="form-user-info">
                     <div className="form-group">
                         <label htmlFor="username" className="form-label">
                             Потребителско име
@@ -89,6 +90,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+                    </div>
                     <div className="form-group">
                         <label htmlFor="password" className="form-label">
                             Парола
@@ -104,8 +106,11 @@ const Register = () => {
                         />
                     </div>
                     <div className="address-section">
-                        <h3 className="address-title">Адрес</h3>
+                        <h3 className="address-title">Адрес
+                        </h3>
+
                         <div className="address-fields">
+                            <section>
                             <div className="form-group">
                                 <label htmlFor="street" className="form-label">
                                     Улица
@@ -134,6 +139,8 @@ const Register = () => {
                                     onChange={handleChange}
                                 />
                             </div>
+                            </section>
+                            <section>
                             <div className="form-group">
                                 <label htmlFor="country" className="form-label">
                                     Държава
@@ -162,6 +169,7 @@ const Register = () => {
                                     onChange={handleChange}
                                 />
                             </div>
+                            </section>
                         </div>
                     </div>
 

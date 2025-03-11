@@ -121,8 +121,8 @@ button:focus {
 ul,
 li,
 ol {
-     margin: 0px;
-     padding: 0px;
+     margin: 0;
+     padding: 0;
      list-style: none;
 }
 
@@ -215,7 +215,7 @@ button {
 }
 
 .padding_0{
-     padding: 0px;
+     padding: 0;
 }
 
 .logo {
@@ -232,7 +232,7 @@ button {
 }
 .bg-light {
     background-color: #fefeff !important;
-    box-shadow: 0px 0px 10px 0px;
+    box-shadow: 0 0 10px 0;
     border-top: 45px solid #333a44;
 }
 .navbar-light .navbar-nav .nav-link {
@@ -287,7 +287,7 @@ button {
     font-size: 16px;
     color: #fefeff;
     font-weight: 500;
-    margin-left: 0px;
+    margin-left: 0;
     padding-top: 50px;
 }
 
@@ -303,7 +303,7 @@ button {
     border-right: 10px solid #599ee9;
     border-top: 4px solid #599ee9;
     border-bottom: 4px solid #599ee9;
-    padding: 5px 0px;
+    padding: 5px 0;
     margin-top: 40px;
 }
 
@@ -369,7 +369,7 @@ button {
     float: left;
     font-size: 16px;
     color: #2d343e;
-    margin-left: 0px;
+    margin-left: 0;
     text-align: right;
 }
 
@@ -385,7 +385,7 @@ button {
     border-right: 10px solid #599ee9;
     border-top: 4px solid #599ee9;
     border-bottom: 4px solid #599ee9;
-    padding: 5px 0px;
+    padding: 5px 0;
     margin-top: 40px;
 }
 
@@ -420,7 +420,7 @@ button {
     float: left;
     font-size: 16px;
     color: #363636;
-    margin-left: 0px;
+    margin-left: 0;
     text-align: center;
 }
 .price_text {
@@ -460,7 +460,7 @@ button {
     border-right: 10px solid #599ee9;
     border-top: 4px solid #599ee9;
     border-bottom: 4px solid #599ee9;
-    padding: 5px 0px;
+    padding: 5px 0;
     margin-top: 40px;
 }
 
@@ -503,7 +503,7 @@ button {
     font-size: 16px;
     color: #fefeff;
     font-weight: 500;
-    margin-left: 0px;
+    margin-left: 0;
     padding-top: 50px;
 }
 
@@ -527,7 +527,7 @@ button {
     font-size: 16px;
     color: #191919;
     text-align: center;
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 .testimonial_section_2 {
@@ -600,8 +600,8 @@ button {
     float: left;
     font-size: 18px;
     color: #191919;
-    margin-left: 0px;
-    margin-top: 0px;
+    margin-left: 0;
+    margin-top: 0;
 }
 
 .contact_section{
@@ -609,23 +609,18 @@ button {
     float: left;
     background-color: #f2f7fd;
     height: auto;
-    padding-bottom: 90px;
-    margin-top: 90px;
 }
 
 .image_6{
+    display: flex;
     width: 100%;
-    float: left;
+    justify-content: center;
 }
 
 .email_box {
     width: 100%;
     float: left;
-    /* background-color: #ffffff; */
-    /* border-radius: 20px; */
     height: auto;
-    /* padding: 50px 20px; */
-    /* opacity: 0.80; */
 }
 
 .email-bt {
@@ -633,9 +628,9 @@ button {
     width: 100%;
     height: 55px;
     font-size: 18px;
-    padding: 20px 20px 0px 0px;
+    padding: 20px 20px 0 0;
     background: transparent;
-    border: 0px;
+    border: 0;
     border-bottom: 1px solid #888686;
 }
 
@@ -644,9 +639,9 @@ button {
     width: 100%;
     height: 80px;
     font-size: 18px;
-    padding: 36px 20px 10px 0px;
+    padding: 36px 20px 10px 0;
     background: transparent;
-    border: 0px;
+    border: 0;
     border-bottom: 1px solid #888686;
 }
 
@@ -683,8 +678,8 @@ button {
     float: left;
     font-size: 16px;
     color: #ffffff;
-    margin-left: 0px;
-    margin-top: 0px;
+    margin-left: 0;
+    margin-top: 0;
 }
 
 .section_footer {
@@ -702,7 +697,7 @@ button {
     font-size: 28px;
     color: rgb(235, 235, 235);
     font-weight: bold;
-    padding: 25px 0px;
+    padding: 25px 0;
 }
 
 .email_text {
@@ -712,7 +707,7 @@ button {
     color: #eceaea;
     background-color: #ffffff;
     padding: 10px;
-    border: 0px;
+    border: 0;
 }
 
 .subscribr_bt {
@@ -721,8 +716,8 @@ button {
     font-size: 16pt;
     color: #eceaea;
     background-color: #599ee9;
-    padding: 5px 0px;
-    border: 0px;
+    padding: 5px 0;
+    border: 0;
     text-align: center;
     margin-top: 20px;
     font-weight: 600;
@@ -733,8 +728,8 @@ button {
     float: left;
 }
 .useful_link ul{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .useful_link li{
@@ -764,8 +759,8 @@ button {
 }
 
 .social_icon ul{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .social_icon li {
@@ -787,7 +782,7 @@ button {
     font-size: 16px;
     color: #ffffff;
     text-align: center;
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 .copyright_text a{
@@ -804,7 +799,7 @@ button {
 }
 
 .padding_top_0{
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .margin_top_2{
@@ -812,7 +807,7 @@ button {
 }
 
 .padding_video_0{
-    margin-top: 0px;
+    margin-top: 0;
 }
 .col-md-6{
     display: flex;

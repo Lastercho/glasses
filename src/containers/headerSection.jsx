@@ -1,11 +1,13 @@
+import {Link} from "react-router";
+
 export default function HeaderSection (){
     return (
     <div className="header_section">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="logo">
-                        <a href="index.html">
+                        <Link to="/">
                             <img src="/images/logosmal.svg"  alt={""}/>
-                        </a>
+                        </Link>
                     </div>
                     <button
                         className="navbar-toggler"
@@ -21,49 +23,49 @@ export default function HeaderSection (){
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="/">
+                                <Link className="nav-link" to="/">
                                     HOME
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/about">
+                                <Link className="nav-link" to="/about">
                                     ABOUT
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/products">
+                                <Link className="nav-link" to="/products">
                                     OUR PRODUCTS
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/testimonials">
+                                <Link className="nav-link" to="/testimonials">
                                     TESTIMONIALS
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/promotions">
+                                <Link className="nav-link" to="/promotions">
                                     PROMOTIONS
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/contact">
+                                <Link className="nav-link" to="/contact">
                                     CONTACT US
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <Link className="nav-link" to="#">
                                     <img src="/images/search-icon.png"  alt={""}/>
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/login">
+                                <Link className="nav-link" to="/login">
                                     SIGN IN
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/register">
+                                <Link className="nav-link" to="/register">
                                     REGISTER
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

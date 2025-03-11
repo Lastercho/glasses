@@ -5,10 +5,11 @@
     justify-content: center;
     background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 50%, #f3e8ff 100%);
     padding: 3rem 1rem;
+    text-align: center;
 }
 
 .register-card {
-    max-width: 28rem;
+    max-width: 40rem;
     width: 100%;
     background: white;
     padding: 2rem;
@@ -38,6 +39,14 @@
     font-size: 0.875rem;
     color: #4b5563;
 }
+.form-user-info, section{
+
+    display: flex;
+}
+.form-user-info *, section *{
+    flex-grow: 1;
+}
+
 
 .register-form {
     margin-top: 2rem;
