@@ -1,20 +1,22 @@
-import HeaderSection from "./containers/headerSection.jsx";
-import BannerSection from "./containers/bannerSection.jsx";
-import AboutSection from "./containers/aboutSection.jsx";
-import ProductSection from "./containers/productSection.jsx";
-import PromoSection from "./containers/promoSection.jsx";
-import TestimonialSection from "./containers/testimonialSection.jsx";
-import ContactSection from "./containers/contactSection.jsx";
-import SectionFooter from "./containers/sectionFooter.jsx";
-import CopyrightSection from "./containers/copyrightSection.jsx";
-// import Test from "./containers/test.jsx";
-// import UserManagement from "./containers/userManagement/UserManagement.jsx";
+import HeaderSection from "./containers/HeaderSection.jsx";
+import BannerSection from "./containers/BannerSection.jsx";
+import AboutSection from "./containers/AboutSection.jsx";
+import ProductSection from "./containers/ProductSection.jsx";
+import PromoSection from "./containers/PromoSection.jsx";
+import TestimonialSection from "./containers/TestimonialSection.jsx";
+import ContactSection from "./containers/ContactSection.jsx";
+import SectionFooter from "./containers/SectionFooter.jsx";
+import CopyrightSection from "./containers/CopyrightSection.jsx";
+
+
 import {Route, Routes} from "react-router";
 import Login from "./containers/userManagement/Login.jsx";
 import Register from "./containers/userManagement/Register.jsx";
+import NotFound from "./containers/NotFound.jsx";
 
 
-function App() {
+
+export default function App() {
 
     return (
 
@@ -24,6 +26,9 @@ function App() {
             <HeaderSection/>
 
             <Routes>
+
+                <Route path="*" element={<NotFound/>}/>
+
                 <Route path="/" element={<BannerSection/>}/>
 
                 <Route path="/about" element={<AboutSection/>}/>
@@ -51,5 +56,3 @@ function App() {
 
     )
 }
-
-export default App
