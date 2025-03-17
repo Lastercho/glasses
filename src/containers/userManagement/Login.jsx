@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import '../../css/login.css';
+import {useNavigate} from "react-router";
 
 export default function Login () {
     const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ export default function Login () {
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({
@@ -24,6 +26,7 @@ export default function Login () {
             setSuccess('Успешен вход!');
             setError('');
             console.log('Login successful:', response.data);
+            navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Грешка при входа');
             setSuccess('');

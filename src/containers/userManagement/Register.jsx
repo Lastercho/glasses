@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import '../../css/register.css';
+import {useNavigate} from "react-router";
 
 export default function Register ()  {
     const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ export default function Register ()  {
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -43,6 +45,7 @@ export default function Register ()  {
             setSuccess('Registration successful!');
             setError('');
             console.log('Registration successful:', response.data);
+            navigate('/login')
         } catch (err) {
             setError(err.response?.data?.message || 'Registration error');
             setSuccess('');
