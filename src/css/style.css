@@ -815,7 +815,26 @@ button {
     align-items: center;
     justify-content: center;
 }
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.cardComment :last-child{
+    align-self: center;
+    flex-grow: 10;
 
-
+    
+}
+.cardComment :first-child{
+    align-self: center;
+}
+.ant-card-extra{
+    text-align: end;
+}
 
 

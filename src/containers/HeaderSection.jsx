@@ -38,8 +38,8 @@ export default function HeaderSection (){
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/testimonials">
-                                    TESTIMONIALS
+                                <Link className="nav-link" to="/comments">
+                                    COMMENTS
                                 </Link>
                             </li>
                             <li className="nav-item">

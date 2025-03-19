@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.11",
+    "antd": "^5.24.4",
     "axios": "^1.8.2",
     "glasses": "file:",
     "react": "^19.0.0",
