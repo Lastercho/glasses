@@ -14,6 +14,7 @@ import Login from "./containers/userManagement/Login.jsx";
 import Register from "./containers/userManagement/Register.jsx";
 import NotFound from "./containers/NotFound.jsx";
 import CommentsSection from "./containers/CommentsSection.jsx";
+import Logout from "./containers/userManagement/Logout.jsx";
 
 
 
@@ -43,6 +44,7 @@ export default function App() {
                 <Route path="/login" element={<Login/>} />
 
                 <Route path="/register" element={<Register/>} />
+                <Route path="/logout" element={<Logout/>} />
 
 
 </Routes>

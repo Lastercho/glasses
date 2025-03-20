@@ -19,16 +19,28 @@ export default function Login () {
         });
     };
 
+  
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/api/users/login', formData);
-            setSuccess('Успешен вход!');
-            setError('');
-            console.log('Login successful:', response.data);
-            navigate('/');
-        } catch (err) {
-            setError(err.response?.data?.message || 'Грешка при входа');
+            console.log(response.data);
+            if (response.data.token) {
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+                setSuccess('Успешен вход!');
+                navigate('/');
+            } else {
+                setError('Token is missing in the response');
+            }
+        } catch (error) {
+            if (error.response) {
+                setError(error.response.data.message || 'Възникна грешка при входа');
+            } else if (error.request) {
+                setError('Няма отговор от сървъра. Моля, опитайте отново по-късно.');
+            } else {
+                setError('Възникна грешка при входа');
+            }
             setSuccess('');
         }
     };
@@ -50,6 +62,7 @@ export default function Login () {
                             placeholder="your@email.com"
                             value={formData.email}
                             onChange={handleChange}
+                            autoComplete="email"
                         />
                     </div>
                     <div className="form-group">
@@ -65,6 +78,7 @@ export default function Login () {
                             placeholder="••••••••"
                             value={formData.password}
                             onChange={handleChange}
+                            autoComplete="current-password"
                         />
                     </div>
 

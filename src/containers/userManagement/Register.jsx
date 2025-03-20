@@ -69,6 +69,7 @@ export default function Register ()  {
                             placeholder="Write your username"
                             value={formData.username}
                             onChange={handleChange}
+                            autoComplete='username'
                         />
                     </div>
                     <div className="form-group">
@@ -83,6 +84,7 @@ export default function Register ()  {
                             placeholder="your@email.com"
                             value={formData.email}
                             onChange={handleChange}
+                            autoComplete='email'
                         />
                     </div>
                     </div>
@@ -98,6 +100,7 @@ export default function Register ()  {
                             placeholder="••••••••"
                             value={formData.password}
                             onChange={handleChange}
+                            autoComplete='new-password'
                         />
                     </div>
                     <div className="address-section">
@@ -119,6 +122,7 @@ export default function Register ()  {
                                     placeholder="Street and number"
                                     value={formData.address.street}
                                     onChange={handleChange}
+                                    autoComplete='street-address'
                                 />
                             </div>
                             <div className="form-group">
@@ -133,6 +137,7 @@ export default function Register ()  {
                                     placeholder="City"
                                     value={formData.address.city}
                                     onChange={handleChange}
+                                    autoComplete='address-level2'
                                 />
                             </div>
                             </section>
@@ -149,6 +154,7 @@ export default function Register ()  {
                                     placeholder="Country"
                                     value={formData.address.country}
                                     onChange={handleChange}
+                                    autoComplete='country-name'
                                 />
                             </div>
                             <div className="form-group">
@@ -163,6 +169,7 @@ export default function Register ()  {
                                     placeholder="Postal Code"
                                     value={formData.address.postal_code}
                                     onChange={handleChange}
+                                    autoComplete='postal-code'
                                 />
                             </div>
                             </section>

@@ -67,6 +67,11 @@ export default function HeaderSection (){
                                     REGISTER
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/logout">
+                                    LOGOUT
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </nav>
