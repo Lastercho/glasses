@@ -15,13 +15,15 @@ import Register from "./containers/userManagement/Register.jsx";
 import NotFound from "./containers/NotFound.jsx";
 import CommentsSection from "./containers/CommentsSection.jsx";
 import Logout from "./containers/userManagement/Logout.jsx";
+import UserProvider from './containers/providers/UserProvider';
+import AuthGuard from "./containers/auth/AuthGuard.jsx";
 
 
 
 export default function App() {
-
+  
     return (
-
+        <UserProvider>
         <>
             <HeaderSection/>
 
@@ -35,16 +37,25 @@ export default function App() {
 
                 <Route path="/products" element={<ProductSection/>}/>
 
+                <Route  element={<AuthGuard/>}>
+
                 <Route path="/comments" element={<CommentsSection/>}/>
 
-                <Route path="/promotions" element={<PromoSection/>}/>
+                <Route path="/promotions" element={<PromoSection/> }/>
+
+                </Route>
 
                 <Route path="/contact" element={<ContactSection/>}/>
 
                 <Route path="/login" element={<Login/>} />
 
                 <Route path="/register" element={<Register/>} />
+
+                <Route  element={<AuthGuard/>}>
+
                 <Route path="/logout" element={<Logout/>} />
+
+                </Route>
 
 
 </Routes>
@@ -53,7 +64,7 @@ export default function App() {
             <CopyrightSection/>
 
         </>
-
+        </UserProvider>
 
     )
 }

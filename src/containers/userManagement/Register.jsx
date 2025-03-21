@@ -42,16 +42,22 @@ export default function Register ()  {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/api/users/register', formData);
+            if (response.data.token) {
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('user', JSON.stringify(response.data.user));
             setSuccess('Registration successful!');
             setError('');
             console.log('Registration successful:', response.data);
-            navigate('/login')
+            navigate('/')
+        } else {
+            setError('Token is missing in the response');
+        }
         } catch (err) {
             setError(err.response?.data?.message || 'Registration error');
             setSuccess('');
         }
     };
-
+   
     return (
         <div className="register-container">
             <div className="register-card">

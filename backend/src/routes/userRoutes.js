@@ -1,11 +1,9 @@
 /* eslint-disable no-undef */
 import express from 'express';
 import User from '../models/User.js';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
+import createToken from '../auth/createToken.js';
 
 
-dotenv.config();
 
 const router = express.Router();
 
@@ -19,9 +17,13 @@ router.post('/register', async (req, res) => {
             address
         );
 
+        const token = createToken(user);
+
         res.status(201).json({
             message: 'User created successfully',
-            user
+            user,
+            token
+            
         });
     } catch (error) {
         res.status(400).json({
@@ -36,10 +38,7 @@ router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await User.login(email, password);
-        const payload = { id: user.id, email: user.email };
-        const secretKey = process.env.JWT_SECRET;
-        const options = { expiresIn: '4h' };
-        const token = jwt.sign(payload, secretKey, options);
+        const token = createToken(user);
         res.json({
             message: 'Login successful',
             user,
@@ -71,3 +70,5 @@ router.delete('/:userId', async (req, res) => {
 });
 
 export default router; 
+
+
