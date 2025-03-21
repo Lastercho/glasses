@@ -474,7 +474,7 @@ button {
 .video_section{
     width: 100%;
     float: left;
-    background-image: url(../../public/images/promo.png);
+    background-image: url(/images/promo.png);
     height: auto;
 
 }
@@ -837,4 +837,16 @@ button {
     text-align: end;
 }
 
+.navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.navbar-nav .side{
+    display: flex;
+    flex-direction: row;
+}
 

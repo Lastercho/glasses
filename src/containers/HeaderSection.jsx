@@ -27,6 +27,7 @@ const { token } = useContext(UserContext);
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
+                        <div className="side">
                         <li className="nav-item">
                             <Link className="nav-link" to="/">
                                 HOME
@@ -43,7 +44,7 @@ const { token } = useContext(UserContext);
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/comments" style={{display: token ? '' : 'none'}}>
+                            <Link className="nav-link" to="/comments" >
                                 COMMENTS
                             </Link>
                         </li>
@@ -57,6 +58,8 @@ const { token } = useContext(UserContext);
                                 CONTACT US
                             </Link>
                         </li>
+                        </div>
+                        <div className="side">
                         <li className="nav-item">
                             <Link className="nav-link" to="#">
                                 <img src="/images/search-icon.png" alt={""} />
@@ -77,6 +80,7 @@ const { token } = useContext(UserContext);
                                 LOGOUT
                             </Link>
                         </li>
+                        </div>
                     </ul>
                 </div>
             </nav>

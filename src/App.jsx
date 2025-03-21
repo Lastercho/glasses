@@ -37,9 +37,9 @@ export default function App() {
 
                 <Route path="/products" element={<ProductSection/>}/>
 
-                <Route  element={<AuthGuard/>}>
-
                 <Route path="/comments" element={<CommentsSection/>}/>
+                
+                <Route  element={<AuthGuard/>}>
 
                 <Route path="/promotions" element={<PromoSection/> }/>
 
