@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import '../../css/register.css';
 import {useNavigate} from "react-router";
+import {UserContext} from "../contexts/UserContext.jsx";
 
 export default function Register ()  {
     const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ export default function Register ()  {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
+    const { userLoginHandler } = useContext(UserContext);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -43,8 +45,7 @@ export default function Register ()  {
         try {
             const response = await axios.post('http://localhost:3000/api/users/register', formData);
             if (response.data.token) {
-                localStorage.setItem('token', response.data.token);
-                localStorage.setItem('user', JSON.stringify(response.data.user));
+            userLoginHandler(response.data);
             setSuccess('Registration successful!');
             setError('');
             console.log('Registration successful:', response.data);
