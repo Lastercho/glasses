@@ -50,6 +50,23 @@ class Comment {
             client.release();
         }
     }
+
+    static async softDelete(commentId) {
+        const client = await pool.connect();
+        try {
+            const result = await client.query(
+                'UPDATE comments SET deleted_at = CURRENT_TIMESTAMP, modified_at = CURRENT_TIMESTAMP WHERE id = $1 RETURNING id, user_id, content, created_at, deleted_at, modified_at',
+                [commentId]
+            );
+            if (result.rows.length === 0) {
+                throw new Error('Comment not found');
+            }
+            return result.rows[0];
+        } finally {
+            client.release();
+        }
+    }
+
     static async getAll() {
         const client = await pool.connect();
         try {

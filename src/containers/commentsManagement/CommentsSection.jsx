@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext.jsx";
 import FetchComments from "./FetchComments.jsx";
 import HandleAddComment from "./HandleAddComment.jsx";
+import HandleDeleteComment from "./HandleDeleteComment.jsx";
 
 export default function CommentsSection() {
   const { Meta } = Card;
@@ -24,7 +25,7 @@ export default function CommentsSection() {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   }
-  
+  const handleDeleteComment = HandleDeleteComment(token, fetchComments, currentPage, pageSize);
 
   return (
     <div className="testimonial_section layout_padding">
@@ -38,7 +39,15 @@ export default function CommentsSection() {
         <div>
           <section className="container">
             {comments.map(comment => (
-              <Card key={comment.id} type="inner" title={comment.username} extra={<a href="#">More</a>}>
+              <Card key={comment.id} type="inner" title={comment.username} 
+              extra={
+              <a href="#" 
+              onClick={() => handleDeleteComment(comment.id)}
+              style={{display: comment.user_id === user?.id ? '' : 'none'}}
+              >Delete</a>              
+              }
+         
+              >
                 <Meta className="cardComment"
                   avatar={<Avatar src="/images/oip1.jpg" shape="square" size="large" />}
                   description={comment.content}
@@ -72,5 +81,7 @@ export default function CommentsSection() {
     </div>
   );
 }
+
+
 
 

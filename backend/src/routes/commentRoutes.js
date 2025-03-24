@@ -43,9 +43,10 @@ router.put('/:commentId', async (req, res) => {
 router.delete('/:commentId', async (req, res) => {
     try {
         const { commentId } = req.params;
-        await Comment.delete(commentId);
+        const updatedComment = await Comment.softDelete(commentId);
         res.json({
-            message: 'Comment deleted successfully'
+            message: 'Comment deleted successfully',
+            updatedComment
         });
     } catch (error) {
         res.status(400).json({
@@ -65,9 +66,10 @@ router.get('/', async (req, res) => {
             SELECT comments.*, users.username AS username 
             FROM comments 
             JOIN users ON comments.user_id = users.id 
+            WHERE comments.deleted_at IS NULL
             LIMIT $1 OFFSET $2
         `, [limit, offset]);
-        const totalResult = await pool.query('SELECT COUNT(*) FROM comments');
+        const totalResult = await pool.query('SELECT COUNT(*) FROM comments WHERE deleted_at IS NULL');
         const totalComments = totalResult.rows[0].count;
 
         res.json({
