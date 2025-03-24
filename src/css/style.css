@@ -291,7 +291,7 @@ button {
     padding-top: 50px;
 }
 
-.shop_bt{
+.shop_bt, .comment_bt {
     width: 35%;
     float: left;
     font-size: 18px;
@@ -848,5 +848,15 @@ button {
 .navbar-nav .side{
     display: flex;
     flex-direction: row;
+}
+
+
+.paginator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 40%;
+    align-self: end;
 }
 

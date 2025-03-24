@@ -50,6 +50,15 @@ class Comment {
             client.release();
         }
     }
+    static async getAll() {
+        const client = await pool.connect();
+        try {
+            const result = await client.query('SELECT * FROM comments');
+            return result.rows;
+        } finally {
+            client.release();
+        }
+    }
 }
 
 export default Comment;

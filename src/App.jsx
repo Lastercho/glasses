@@ -13,7 +13,7 @@ import {Route, Routes} from "react-router";
 import Login from "./containers/userManagement/Login.jsx";
 import Register from "./containers/userManagement/Register.jsx";
 import NotFound from "./containers/NotFound.jsx";
-import CommentsSection from "./containers/CommentsSection.jsx";
+import CommentsSection from "./containers/commentsManagement/CommentsSection.jsx";
 import Logout from "./containers/userManagement/Logout.jsx";
 import UserProvider from './containers/providers/UserProvider';
 import AuthGuard from "./containers/auth/AuthGuard.jsx";

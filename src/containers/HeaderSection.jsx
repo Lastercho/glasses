@@ -66,17 +66,17 @@ const { token } = useContext(UserContext);
                             </Link>
                         </li>
                         <li className="nav-item active">
-                            <Link className="nav-link" to="/login">
+                            <Link className="nav-link" to="/login" style={{display: token ? 'none' : ''}}>
                                 SIGN IN
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/register">
+                            <Link className="nav-link" to="/register" style={{display: token ? 'none' : ''}}>
                                 REGISTER
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/logout">
+                            <Link className="nav-link" to="/logout" style={{display: token ? '' : 'none'}}>
                                 LOGOUT
                             </Link>
                         </li>

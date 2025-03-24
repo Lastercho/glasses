@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
 import pool from './config/database.js';
+import commentsRoutes from './routes/commentRoutes.js';
 import process from 'process';
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 // Use user routes
 app.use('/api/users', userRoutes);
+app.use('/api/comments', commentsRoutes);
 
 export async function SetupApp() {
     try {

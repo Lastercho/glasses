@@ -6,10 +6,10 @@ export default function Logout() {
     const { userLogoutHandler } = useContext(UserContext);
     const navigate = useNavigate();
 
-    userLogoutHandler();
     useEffect(() => {
+        userLogoutHandler();
         navigate('/login');
-    }, [navigate]);
+    }, [userLogoutHandler, navigate]);
 
     return null;
 }
