@@ -824,6 +824,7 @@ button {
     display: flex;
     flex-direction: column;
 }
+
 .cardComment :last-child{
     align-self: center;
     flex-grow: 10;
@@ -858,5 +859,16 @@ button {
     margin-top: 20px;
     max-width: 40%;
     align-self: end;
+}
+
+.ant-form-item-control-input-content{
+    display: flex;
+    justify-content: center;
+}
+
+.bigCardComment{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
 }
 

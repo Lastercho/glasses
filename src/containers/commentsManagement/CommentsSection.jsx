@@ -72,7 +72,7 @@ export default function CommentsSection() {
                 <Input.TextArea rows={4} placeholder="Add your comment here..." />
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit">Add Comment</Button>
+                <Button className="comment_bt" type="primary" htmlType="submit">Add Comment</Button>
               </Form.Item>
             </Form>
           </div>
