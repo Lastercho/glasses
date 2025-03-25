@@ -1,4 +1,4 @@
-import { Avatar, Card, Button, Input, Form, Pagination } from "antd";
+import { Space, Select, Avatar, Card, Button, Input, Form, Pagination } from "antd";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext.jsx";
 import FetchComments from "./FetchComments.jsx";
@@ -12,7 +12,7 @@ export default function CommentsSection() {
   const [totalComments, setTotalComments] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [form] = Form.useForm();
-  const pageSize = 5;
+  const [pageSize, setPageSize] = useState(5);
 
   useEffect(() => {
     fetchComments(currentPage, pageSize);
@@ -21,11 +21,16 @@ export default function CommentsSection() {
   const fetchComments = FetchComments(setComments, setTotalComments, token, pageSize);
 
   const handleAddComment = HandleAddComment(user, token, form, fetchComments, setCurrentPage);
+  
+  const handleDeleteComment = HandleDeleteComment(token, fetchComments, currentPage, pageSize);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   }
-  const handleDeleteComment = HandleDeleteComment(token, fetchComments, currentPage, pageSize);
+
+  const handlePageSizeChange = (value) => {
+    setPageSize(value);
+  }
 
   return (
     <div className="testimonial_section layout_padding">
@@ -54,14 +59,25 @@ export default function CommentsSection() {
                 />
               </Card>
             ))}
-            <Pagination
-              className="paginator"
+            <div className="paginator">
+            <Pagination              
               current={currentPage}
               total={totalComments}
               pageSize={pageSize}
               onChange={handlePageChange}
               style={{ padding: '2em'}}
             />
+            <Space wrap>
+            <Select
+            
+      defaultValue='5'
+      style={{ width: 120 }}
+      onChange={handlePageSizeChange}
+      options={[{ value: '5', label: '5' },{ value: '10', label: '10' },{ value: '20', label: '20' },{ value: '50', label: '50' }]}
+            />
+            </Space>
+
+            </div>
           </section>
         </div>
 

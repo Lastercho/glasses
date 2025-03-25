@@ -17,6 +17,7 @@ import CommentsSection from "./containers/commentsManagement/CommentsSection.jsx
 import Logout from "./containers/userManagement/Logout.jsx";
 import UserProvider from './containers/providers/UserProvider';
 import AuthGuard from "./containers/auth/AuthGuard.jsx";
+import Test from "./containers/Test.jsx";
 
 
 
@@ -26,6 +27,7 @@ export default function App() {
         <UserProvider>
         <>
             <HeaderSection/>
+            <Test/>
 
             <Routes>
 
