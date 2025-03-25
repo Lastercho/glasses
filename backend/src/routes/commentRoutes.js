@@ -67,6 +67,8 @@ router.get('/', async (req, res) => {
             FROM comments 
             JOIN users ON comments.user_id = users.id 
             WHERE comments.deleted_at IS NULL
+            ORDER BY 
+                COALESCE(comments.modified_at, comments.created_at) DESC
             LIMIT $1 OFFSET $2
         `, [limit, offset]);
         const totalResult = await pool.query('SELECT COUNT(*) FROM comments WHERE deleted_at IS NULL');
