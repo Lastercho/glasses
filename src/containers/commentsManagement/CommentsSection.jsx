@@ -18,8 +18,8 @@ export default function CommentsSection() {
   const { TextArea } = Input;
 
   useEffect(() => {
-    fetchComments(currentPage, pageSize, comment);
-  }, [currentPage, pageSize, comment]);
+    fetchComments(currentPage, pageSize);
+  }, [currentPage, pageSize]);
 
   const fetchComments = FetchComments(
     setComments,
@@ -45,6 +45,7 @@ export default function CommentsSection() {
     HandleEditComment(token, comment).then(() => {
       fetchComments(currentPage, pageSize);
       setEditComment(false);
+      setCurrentPage(1);
     });
   };
 
@@ -73,7 +74,7 @@ export default function CommentsSection() {
           minim veniam, quis nostrud
         </p>
         <div>
-          <section className="container">
+          <section className="container">         
             {comments &&
               comments.map((comment) => (
                 <Card
