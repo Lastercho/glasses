@@ -30,7 +30,7 @@ export default function Login() {
                 userLoginHandler(response.data);
                
 
-                navigate('/');
+                navigate(-1);
             } else {
                 setError('Token is missing in the response');
             }

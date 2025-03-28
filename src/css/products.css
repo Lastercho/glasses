@@ -16,6 +16,11 @@ h2 {
 .container-fluid {
   max-width: 1200px;
 }
+@media (max-width: 1200px) and  (min-width: 980px) {
+    .col{
+        max-width: 35%;
+    }
+    }
 .card {
   background: #fff;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);

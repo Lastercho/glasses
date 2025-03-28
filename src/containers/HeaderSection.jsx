@@ -34,11 +34,6 @@ const { token } = useContext(UserContext);
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">
-                                ABOUT
-                            </Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="/products" >
                                 OUR PRODUCTS
                             </Link>
@@ -51,6 +46,11 @@ const { token } = useContext(UserContext);
                         <li className="nav-item">
                             <Link className="nav-link" to="/promotions" style={{display: token ? '' : 'none'}}>
                                 PROMOTIONS
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/about">
+                                ABOUT
                             </Link>
                         </li>
                         <li className="nav-item">

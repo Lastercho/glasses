@@ -8,7 +8,7 @@ export default function Logout() {
 
     useEffect(() => {
         userLogoutHandler();
-        navigate('/login');
+        navigate(-1);
     }, [userLogoutHandler, navigate]);
 
     return null;
