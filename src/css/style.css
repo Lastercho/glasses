@@ -283,7 +283,7 @@ justify-self: center;
     justify-content: center;
 }
 
-.video_text{
+.promotion_text{
     width: 100%;
     float: left;
     font-size: 50px;
@@ -493,7 +493,7 @@ justify-self: center;
     color: #599ee9;
 }
 
-.video_section{
+.promotion_section{
     width: 100%;
     float: left;
     background-image: url(/images/promo.png);
@@ -501,7 +501,7 @@ justify-self: center;
 
 }
 
-.video_text_2{
+.promotion_text_2{
     width: 100%;
     float: left;
     font-size: 50px;
@@ -529,11 +529,12 @@ justify-self: center;
     padding-top: 50px;
 }
 
-.testimonial_section{
+.comments_section{
     width: 100%;
     float: left;
+    padding: 2em 4em;
 }
-.testimonial_text{
+.comments_text{
     width: 100%;
     float: left;
     font-size: 46px;
@@ -552,7 +553,7 @@ justify-self: center;
     margin-left: 0;
 }
 
-.testimonial_section_2 {
+.comments_section_2 {
     width: 100%;
     float: left;
     padding-top: 50px;
@@ -957,4 +958,49 @@ justify-self: center;
     padding: 1em 3em;
     
     
+}
+
+.about_section .row, 
+.contact_section .row, 
+.promotion_section .row  {
+    display: flex;
+    flex-direction: row;
+    padding: 4em 10em;
+    
+}
+
+.contact_section .row :first-child{
+    flex-grow: 3;
+}
+.layout_padding{
+    padding: auto 3em;
+}
+.email_box{
+    max-width: 60em;
+}
+
+.product_section_2{
+    display: flex;
+    justify-content: center;
+}
+.row-cols-lg-4{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    flex-direction: row;
+}
+.row-cols-lg-4 .col{
+    width: 25em;
+    height: 30em;
+    margin: 1em;
+}
+.row-cols-lg-4 .col .card {
+    height: 100%;
+    padding: 1.5em;
+}
+.card-body{
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

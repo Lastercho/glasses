@@ -18,7 +18,7 @@ return (
                                 believable
                             </p>
                             <div className="shop_bt_2">
-                                <a href="#">Shop Now</a>
+                                <a href="/products">Shop Now</a>
                             </div>
                         </div>
                     </div>

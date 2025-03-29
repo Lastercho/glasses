@@ -19,7 +19,7 @@ export default function BannerSection() {
                                         even slightly believable
                                     </p>
                                     <div className="shop_bt">
-                                        <a href="#">Shop Now</a>
+                                        <a href="/products">Shop Now</a>
                                     </div>
                                 </div>
                                 <div className="col-md-6">

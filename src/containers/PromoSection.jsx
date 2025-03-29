@@ -1,10 +1,10 @@
 export default function PromoSection() {
     return (
-        <div className="video_section layout_padding">
+        <div className="promotion_section layout_padding">
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
-                        <h1 className="video_text_2">special glasses inserts</h1>
+                        <h1 className="promotion_text_2">special glasses inserts</h1>
                         <h1 className="controller_text_2">for VR sets</h1>
                         <p className="banner_text_2">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

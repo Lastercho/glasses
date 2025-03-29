@@ -65,9 +65,9 @@ export default function CommentsSection() {
   };
 
   return (
-    <div className="testimonial_section layout_padding">
+    <div className="comments_section layout_padding">
       <div className="container">
-        <h1 className="testimonial_text">Comments</h1>
+        <h1 className="comments_text">Comments</h1>
         <p className="ipsum_text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
