@@ -8,7 +8,7 @@ export default function BannerSection() {
                 <div id="my_slider" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <div className="row">
+                            <div className="row-top">
                                 <div className="col-md-6">
                                     <h1 className="video_text">Glasses and frames</h1>
                                     <h1 className="controller_text">something for every taste</h1>

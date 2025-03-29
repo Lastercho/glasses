@@ -4,7 +4,7 @@ export default function SectionFooter() {
         <div className="section_footer ">
             <div className="container">
                 <div className="footer_section_2">
-                    <div className="row">
+                    <div className="row-bottom">
                         <div className="col-sm-6 col-md-6 col-lg-3">
                             <h2 className="account_text">About Us</h2>
                             <p className="ipsum_text_2">
@@ -32,7 +32,8 @@ export default function SectionFooter() {
                             <h2 className="account_text">Contact Us</h2>
                             <p className="ipsum_text_2">
                                 dolor sit amet, consectetur magna aliqua. quisdotempor incididunt
-                                ut e{" "}
+                                ut e
+                                {" "}
                             </p>
                         </div>
                         <div className="col-sm-6 col-md-6 col-lg-3">

@@ -214,6 +214,18 @@ button {
 }
 .navbar {
     padding: 20px 30px;
+    display: flex;
+    flex-direction: row;
+
+}
+.navbar-collapse{
+    width: 100%;
+}
+.navbar-nav{
+height: 100%;
+text-align: center;
+align-items: center;
+
 }
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 10px;
@@ -244,11 +256,31 @@ button {
     height: auto;
     padding-bottom: 200px;
     background-size: cover;
+    padding: 10em;
+   
 }
+
+.row-top{
+display: flex;
+flex-direction: row;
+height: 45em;
+justify-self: center;
+}
+
+.row-bottom{
+    display: flex;
+    flex-direction: row;
+    height: 22ex;
+    justify-self: center;
+
+    }
+
 .image_1 {
+    display: flex;
     width: 100%;
     float: left;
-    padding-top: 40px;
+    width: 50em;
+    justify-content: center;
 }
 
 .video_text{
@@ -294,7 +326,7 @@ button {
     border-top: 4px solid #599ee9;
     border-bottom: 4px solid #599ee9;
     padding: 5px 0;
-    margin-top: 40px;
+    margin-top: 5em;
 }
 
 .shop_bt a{
@@ -676,9 +708,8 @@ button {
     width: 100%;
     float: left;
     background-color: rgb(41, 40, 40);
-    height: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    height: 20em;
+    
 }
 
 .account_text {
@@ -743,20 +774,30 @@ button {
 }
 
 .social_icon {
-    width: 19%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 20%;
     margin: 0 auto;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
 }
 
 .social_icon ul{
-    margin: 0;
+    display: flex;
+    width: 100%;
     padding: 0;
+    justify-content: space-between;
 }
 
-.social_icon li {
-    float: left;
-    padding-right: 20px;
-    padding-top: 40px;
+.social_icon li img{
+
+    height: 3em;
+    width: 5em;
+
+
 }
 
 .copyright_section{
@@ -804,8 +845,10 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0em 2em;
 }
 .container {
+    height: 100%;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -904,4 +947,14 @@ button {
     width: 30%;
     left: 35%;
     margin-top: 20px;
+}
+
+
+.col-lg-3{
+    justify-content: start;
+    width: 22em;
+
+    padding: 1em 3em;
+    
+    
 }
