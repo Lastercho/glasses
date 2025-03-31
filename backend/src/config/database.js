@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 import pkg from 'pg';
 const { Pool } = pkg;
-import dotenv from 'dotenv';
+import 'dotenv/config'
 
 
-dotenv.config();
+
 
 const pool = new Pool({
     user: process.env.DB_USER,
