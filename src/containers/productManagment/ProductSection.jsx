@@ -1,10 +1,11 @@
 import "../../css/products.css";
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 
 import HandleDeleteProduct from "./HandleDeleteProduct";
 import HandleEditProduct from "./HandleEditProduct";
 import FetchProducts from "./FetchProducts";
+import { Button } from "antd";
 
 export default function ProductSection() {
   const { token, user } = useContext(UserContext);
@@ -14,11 +15,11 @@ export default function ProductSection() {
   const [pageSize, setPageSize] = useState(6);
   const [editProduct, setEditProduct] = useState(false);
   const [product, setProduct] = useState({});
+  const [details, setDetails] = useState(false);
 
-
-  // useEffect(() => {
-  //   fetchProducts(pageSize)
-  // }, [pageSize]);
+  useEffect(() => {
+    details;
+  }, [details]);
 
   const fetchProducts = FetchProducts(
     setProducts,
@@ -36,7 +37,14 @@ export default function ProductSection() {
     HandleEditProduct(token, product).then(() => {
       fetchProducts(pageSize);
       setEditProduct(false);
+      console.log();
     });
+  };
+
+  const handleDetailsProduct = (product) => {
+    setProduct(product);
+    setDetails(true);
+    setPageSize(6);
   };
 
   const handleDeleteProduct = HandleDeleteProduct(
@@ -75,31 +83,24 @@ export default function ProductSection() {
                       alt={product.name}
                     />
                     <div className="card-body">
-                      
                       <div className="clearfix mb-3">
-                        
                         <span className="float-start badge rounded-pill bg-primary">
                           {product.name}
                         </span>
-                        <h5 className="card-title">
-                          {product.description}
-                        </h5>
-                        <span className="float-end price-hp">
-                          {product.price}&euro;
-                        </span>
-                        {product.user_id === user?.id && (
-                          
+                        <h5 className="card-title">{product.description}</h5>
+                        <div className="details">
+                          <span className="float-end price-hp">
+                            {product.price}&euro;
+                          </span>
                           <div className="buttons-row">
-                            <button className="btn btn-warning" onClick={() => handleEditProduct(product)}>
-                              Edit
-                            </button>
-                            <button className="btn btn-warning"
-                              onClick={() => handleDeleteProduct(product.id)}
+                            <button
+                              className="btn btn-warning"
+                              onClick={() => handleDetailsProduct(product)}
                             >
-                              Delete
+                              Details
                             </button>
                           </div>
-                        )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -108,19 +109,70 @@ export default function ProductSection() {
             </div>
           </div>
         </div>
-        <div className="see_main">
-          <div className="see_bt">
-            <button className="see_more" onClick={handlePageSizeChange}>See More</button>
+        <div>
+          <div>
+            <Button
+              className="comment_bt"
+              type="primary"
+              htmlType="submit"
+              onClick={handlePageSizeChange}
+            >
+              See More
+            </Button>
           </div>
         </div>
-        {1 === user?.id  && (
-        <div className="see_main">
-          <div className="see_bt">
-            <a href="/addproduct">Add Product</a>
-          </div>
-        </div>
+        {1 === user?.id && (
+          <Button
+            className="comment_bt"
+            type="primary"
+            htmlType="submit"
+            href="/addproduct"
+          >
+            Add Product
+          </Button>
         )}
       </div>
+      {details && (
+        <section className="detail_section">
+          <header className="close-header">
+            <h2>Edit Comment</h2>
+            <button onClick={() => setDetails(false)}>X</button>
+          </header>
+
+          <img
+            src={product.image_url}
+            className="card-img-top"
+            alt={product.name}
+          />
+          {/* <div className="card-body"> */}
+          {/* <div className="clearfix mb-3"> */}
+          <span className="float-start badge rounded-pill bg-primary">
+            {product.name}
+          </span>
+          <h5 className="card-title">{product.description}</h5>
+          <div className="details">
+            <span className="float-end price-hp">{product.price}&euro;</span>
+            {/* </div> */}
+          </div>
+          {/* </div> */}
+          {product.user_id === user?.id && (
+            <div className="buttons-row">
+              <button
+                className="btn btn-warning"
+                onClick={() => handleEditProduct(product)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn btn-warning"
+                onClick={() => handleDeleteProduct(product.id)}
+              >
+                Delete
+              </button>
+            </div>
+          )}
+        </section>
+      )}
     </div>
   );
 }

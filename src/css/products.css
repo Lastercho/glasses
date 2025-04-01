@@ -232,3 +232,30 @@ footer {
 
  color: #599fe9;
 }
+
+.details{
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: auto;
+  
+}
+.detail_section{
+  background-color: #ffffffd7;
+  font-size: larger;
+  position: absolute;
+  top: 50%;
+  width: 70%;
+  border: #363636 1px solid;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 2;
+  left: 15%;
+  box-shadow: #00000071 0px 0px 20px 0px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

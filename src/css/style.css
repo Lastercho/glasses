@@ -29,7 +29,7 @@ html {
 body {
      color: #666666;
      font-size: 14px;
-        font-family: Poppins, serif;
+     font-family: Poppins, serif;
      line-height: 1.80857;
      font-weight: normal;
      overflow-x: hidden;
@@ -939,6 +939,7 @@ justify-self: center;
     border: none;
     font-size: 1.5em;
     cursor: pointer;
+    text-align: right;
 }
 
 .comment_bt{
