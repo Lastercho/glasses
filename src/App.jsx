@@ -1,7 +1,7 @@
 import HeaderSection from "./containers/HeaderSection.jsx";
 import BannerSection from "./containers/BannerSection.jsx";
 import AboutSection from "./containers/AboutSection.jsx";
-import ProductSection from "./containers/ProductSection.jsx";
+import ProductSection from "./containers/productManagment/ProductSection.jsx";
 import PromoSection from "./containers/PromoSection.jsx";
 
 import ContactSection from "./containers/ContactSection.jsx";
@@ -16,6 +16,7 @@ import CommentsSection from "./containers/commentsManagement/CommentsSection.jsx
 import Logout from "./containers/userManagement/Logout.jsx";
 import UserProvider from "./containers/providers/UserProvider";
 import AuthGuard from "./containers/auth/AuthGuard.jsx";
+import AddProduct from "./containers/productManagment/AddProduct.jsx";
 // import Test from "./containers/Test.jsx";
 
 export default function App() {
@@ -33,6 +34,8 @@ export default function App() {
           <Route path="/about" element={<AboutSection />} />
 
           <Route path="/products" element={<ProductSection />} />
+
+          <Route path="/addproduct" element={<AddProduct />} />
 
           <Route path="/comments" element={<CommentsSection />} />
 

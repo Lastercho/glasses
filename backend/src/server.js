@@ -4,6 +4,7 @@ import userRoutes from './routes/userRoutes.js';
 import pool from './config/database.js';
 import commentsRoutes from './routes/commentRoutes.js';
 import process from 'process';
+import productRoutes from './routes/productRoutes.js';
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 // Use user routes
 app.use('/api/users', userRoutes);
 app.use('/api/comments', commentsRoutes);
+app.use('/api/products', productRoutes);
 
 export async function SetupApp() {
     try {
@@ -27,4 +29,4 @@ export async function SetupApp() {
     }
 }
 
-SetupApp(); 
+SetupApp();

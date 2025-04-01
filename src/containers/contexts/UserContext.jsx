@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 export const UserContext = createContext({
-    _id: '',
+    id: '', // Changed `_id` to `id` for consistency
     email: '',
     username: '',
     token: '',

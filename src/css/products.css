@@ -36,8 +36,10 @@ h2 {
   border-top-right-radius: calc(1rem - 1px);
 }
 .card h5 {
+  display: flex;
   overflow: hidden;
-  height: 56px;
+  flex-wrap: wrap;
+  height: auto;
   font-weight: 900;
   font-size: 1rem;
 }
@@ -105,6 +107,7 @@ h2 {
 .box .btn {
   font-size: 1.5rem;
 }
+
 @media (max-width: 1025px) {
   .btn {
     padding: 5px 40px 5px 40px;
@@ -116,23 +119,24 @@ h2 {
   }
 }
 .btn-warning {
-  background: none #f7810a;
+  background: none #5ca0e9;
   color: #ffffff;
   fill: #ffffff;
   border: none;
   text-decoration: none;
   outline: 0;
-  box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25);
+  box-shadow: -1px 6px 19px rgba(14, 10, 247, 0.25);
   border-radius: 100px;
+  justify-self: end;
 }
 .btn-warning:hover {
-  background: none #ff962b;
+  background: none #0953a1;
   color: #ffffff;
-  box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35);
+  box-shadow: -1px 6px 13px rgba(14, 10, 247, 0.25);
 }
 .bg-success {
   font-size: 1rem;
-  background-color: #f7810a !important;
+  background-color: #5ca0e9 !important;
 }
 .bg-danger {
   font-size: 1rem;
@@ -203,4 +207,28 @@ footer {
   background: #212529;
   height: 80px;
   color: #fff;
+}
+.clearfix{
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+.buttons-row{
+  display: flex;
+  margin-top: auto;
+}
+.see_more{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+.see_more:hover{
+
+ color: #599fe9;
 }
