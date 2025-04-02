@@ -1,4 +1,5 @@
 import axios from "axios";
+import { message } from "antd";
 
 export default function handleAddComment(
   user,
@@ -21,6 +22,8 @@ export default function handleAddComment(
           },
         }
       );
+      
+      message.success("Comment added successfully");
       setCurrentPage(1); // Reset to the first page
       fetchComments(1); // Refresh comments
     } catch (error) {

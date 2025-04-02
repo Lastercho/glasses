@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import HandleAddProduct from "./HandleAddProduct";
 import HandleEditProduct from "./HandleEditProduct";
 
-export default function AddOrRemoveProduct() {
+export default function AddOrEditProduct() {
   const { token, id: userId } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();

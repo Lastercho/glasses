@@ -1,4 +1,5 @@
 import axios from "axios";
+import { message } from "antd";
 
 export default function HandleDeleteComment(
   token,
@@ -14,6 +15,7 @@ export default function HandleDeleteComment(
         },
       });
       fetchComments(currentPage, pageSize);
+      message.success("Comment deleted successfully");
     } catch (error) {
       console.error("Error deleting comment:", error);
     }

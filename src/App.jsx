@@ -16,7 +16,7 @@ import CommentsSection from "./containers/commentsManagement/CommentsSection.jsx
 import Logout from "./containers/userManagement/Logout.jsx";
 import UserProvider from "./containers/providers/UserProvider";
 import AuthGuard from "./containers/auth/AuthGuard.jsx";
-import AddOrRemoveProduct from "./containers/productManagment/AddOrRemoveProduct.jsx";
+import AddOrEditProduct from "./containers/productManagment/AddOrEditProduct.jsx";
 // import Test from "./containers/Test.jsx";
 
 export default function App() {
@@ -35,7 +35,7 @@ export default function App() {
 
           <Route path="/products" element={<ProductSection />} />
 
-          <Route path="/addproduct" element={<AddOrRemoveProduct />} />
+          <Route path="/addproduct" element={<AddOrEditProduct />} />
 
           <Route path="/comments" element={<CommentsSection />} />
 
