@@ -21,6 +21,7 @@ export default function ProductSection() {
     details;
   }, [details]);
 
+
   const fetchProducts = FetchProducts(
     setProducts,
     setTotalProducts,
@@ -37,7 +38,6 @@ export default function ProductSection() {
     HandleEditProduct(token, product).then(() => {
       fetchProducts(pageSize);
       setEditProduct(false);
-      console.log();
     });
   };
 

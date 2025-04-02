@@ -1,21 +1,9 @@
 /* eslint-disable no-undef */
 import express from 'express';
-import jwt from 'jsonwebtoken';
 import Product from '../models/Product.js';
+import authenticateToken from '../auth/authenticateToken.js';
 
 const router = express.Router();
-
-// Middleware to authenticate user
-function authenticateToken(req, res, next) {
-    const token = req.headers['authorization']?.split(' ')[1];
-    if (!token) return res.sendStatus(401);
-
-    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        if (err) return res.sendStatus(403);
-        req.user = user;
-        next();
-    });
-}
 
 // Create a new product
 router.post('/create', authenticateToken, async (req, res) => {

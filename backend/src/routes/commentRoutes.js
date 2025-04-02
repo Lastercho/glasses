@@ -1,11 +1,12 @@
 import express from 'express';
 import Comment from '../models/Comment.js';
 import pool from '../config/database.js';
+import authenticateToken from '../auth/authenticateToken.js';
 
 const router = express.Router();
 
 // Create a new comment
-router.post('/create', async (req, res) => {
+router.post('/create', authenticateToken, async (req, res) => {
     try {
         const commentData = req.body;
         const comment = await Comment.create(commentData);
@@ -22,7 +23,7 @@ router.post('/create', async (req, res) => {
 });
 
 // Update an existing comment
-router.put('/:commentId', async (req, res) => {
+router.put('/:commentId', authenticateToken, async (req, res) => {
     try {
         const { commentId } = req.params;
         const { content } = req.body;
@@ -40,7 +41,7 @@ router.put('/:commentId', async (req, res) => {
 });
 
 // Delete a comment
-router.delete('/:commentId', async (req, res) => {
+router.delete('/:commentId', authenticateToken, async (req, res) => {
     try {
         const { commentId } = req.params;
         const updatedComment = await Comment.softDelete(commentId);
