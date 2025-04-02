@@ -1,12 +1,13 @@
 import "../../css/addProduct.css";
 import { useContext, useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
 import HandleAddProduct from "./HandleAddProduct";
 import HandleEditProduct from "./HandleEditProduct";
 
 export default function AddOrRemoveProduct() {
   const { token, id: userId } = useContext(UserContext);
+  const navigate = useNavigate();
   const location = useLocation();
   const editedProduct = location.state?.product || {};
   console.log(editedProduct);
@@ -42,6 +43,7 @@ export default function AddOrRemoveProduct() {
       await addProduct();
     }
     setProduct({ name: "", description: "", price: "", image_url: "" });
+    navigate('/products')
   };
 
   return (

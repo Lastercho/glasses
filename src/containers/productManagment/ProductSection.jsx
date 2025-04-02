@@ -14,12 +14,12 @@ export default function ProductSection() {
   const [pageSize, setPageSize] = useState(6);
   const [product, setProduct] = useState({});
   const [details, setDetails] = useState(false);
-
   useEffect(() => {
-    details;
-  }, [details]);
-
-  const fetchProducts = FetchProducts(setProducts, token, pageSize);
+    const fetchProducts = async () => {
+      await FetchProducts(setProducts, token, pageSize);
+    };
+    fetchProducts();
+  }, [pageSize, token]);
 
   const startEditProduct = (editedProduct) => {
     navigate("/addproduct", { state: { product: editedProduct } });
@@ -33,7 +33,12 @@ export default function ProductSection() {
 
   const handleDeleteProduct = HandleDeleteProduct(
     token,
-    fetchProducts,
+    async () => {
+      const fetchProducts = async () => {
+        await FetchProducts(setProducts, token, pageSize);
+      };
+      fetchProducts();
+    },
     pageSize
   );
 
@@ -119,7 +124,7 @@ export default function ProductSection() {
       {details && (
         <section className="detail_section">
           <header className="close-header">
-            <h2>Edit Comment</h2>
+            <h2>Product Details</h2>
             <button onClick={() => setDetails(false)}>X</button>
           </header>
 
@@ -145,7 +150,7 @@ export default function ProductSection() {
               </button>
               <button
                 className="btn btn-warning"
-                onClick={() => handleDeleteProduct(product.id)}
+                onClick={() => {handleDeleteProduct(product.id) , setDetails(false)}}
               >
                 Delete
               </button>
