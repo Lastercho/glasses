@@ -30,7 +30,7 @@ class Comment {
                 throw new Error('Comment not found');
             }
             return result.rows[0];
-        }  finally {
+        } finally {
             client.release();
         }
     }
@@ -46,7 +46,7 @@ class Comment {
                 throw new Error('Comment not found');
             }
             return true;
-        }  finally {
+        } finally {
             client.release();
         }
     }

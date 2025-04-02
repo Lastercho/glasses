@@ -1,5 +1,5 @@
-import { Space, Select, Avatar, Card, Button, Input, Pagination } from "antd";
-import { useContext, useState, useEffect } from "react";
+import { Avatar, Button, Card, Input, Pagination, Select, Space } from "antd";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/UserContext.jsx";
 import FetchComments from "./FetchComments.jsx";
 import HandleAddComment from "./HandleAddComment.jsx";
@@ -74,7 +74,7 @@ export default function CommentsSection() {
           minim veniam, quis nostrud
         </p>
         <div>
-          <section className="container">         
+          <section className="container">
             {comments &&
               comments.map((comment) => (
                 <Card

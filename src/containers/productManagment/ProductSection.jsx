@@ -3,17 +3,15 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 
 import HandleDeleteProduct from "./HandleDeleteProduct";
-import HandleEditProduct from "./HandleEditProduct";
 import FetchProducts from "./FetchProducts";
 import { Button } from "antd";
+import { useNavigate } from "react-router";
 
 export default function ProductSection() {
   const { token, user } = useContext(UserContext);
-
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
-  const [totalProducts, setTotalProducts] = useState(0);
   const [pageSize, setPageSize] = useState(6);
-  const [editProduct, setEditProduct] = useState(false);
   const [product, setProduct] = useState({});
   const [details, setDetails] = useState(false);
 
@@ -21,24 +19,10 @@ export default function ProductSection() {
     details;
   }, [details]);
 
+  const fetchProducts = FetchProducts(setProducts, token, pageSize);
 
-  const fetchProducts = FetchProducts(
-    setProducts,
-    setTotalProducts,
-    token,
-    pageSize
-  );
-
-  const showEditProduct = (product) => {
-    setProduct(product);
-    setEditProduct(true);
-  };
-
-  const handleEditProduct = () => {
-    HandleEditProduct(token, product).then(() => {
-      fetchProducts(pageSize);
-      setEditProduct(false);
-    });
+  const startEditProduct = (editedProduct) => {
+    navigate("/addproduct", { state: { product: editedProduct } });
   };
 
   const handleDetailsProduct = (product) => {
@@ -144,22 +128,18 @@ export default function ProductSection() {
             className="card-img-top"
             alt={product.name}
           />
-          {/* <div className="card-body"> */}
-          {/* <div className="clearfix mb-3"> */}
           <span className="float-start badge rounded-pill bg-primary">
             {product.name}
           </span>
           <h5 className="card-title">{product.description}</h5>
           <div className="details">
             <span className="float-end price-hp">{product.price}&euro;</span>
-            {/* </div> */}
           </div>
-          {/* </div> */}
           {product.user_id === user?.id && (
             <div className="buttons-row">
               <button
                 className="btn btn-warning"
-                onClick={() => handleEditProduct(product)}
+                onClick={() => startEditProduct(product)}
               >
                 Edit
               </button>

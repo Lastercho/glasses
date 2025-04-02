@@ -16,11 +16,11 @@ h2 {
 .container-fluid {
   max-width: 1200px;
 }
-@media (max-width: 1200px) and  (min-width: 980px) {
-    .col{
-        max-width: 35%;
-    }
-    }
+@media (max-width: 1200px) and (min-width: 980px) {
+  .col {
+    max-width: 35%;
+  }
+}
 .card {
   background: #fff;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
@@ -208,40 +208,38 @@ footer {
   height: 80px;
   color: #fff;
 }
-.clearfix{
+.clearfix {
   display: flex;
   flex-direction: column;
 
   height: 100%;
 }
-.buttons-row{
+.buttons-row {
   display: flex;
   margin-top: auto;
 }
-.see_more{
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    color: inherit;
-    cursor: pointer;
-    outline: none;
+.see_more {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
 }
-.see_more:hover{
-
- color: #599fe9;
+.see_more:hover {
+  color: #599fe9;
 }
 
-.details{
+.details {
   margin-top: 2em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: auto;
-  
 }
-.detail_section{
+.detail_section {
   background-color: #ffffffd7;
   font-size: larger;
   position: absolute;
@@ -253,7 +251,7 @@ footer {
   z-index: 2;
   left: 15%;
   box-shadow: #00000071 0px 0px 20px 0px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;

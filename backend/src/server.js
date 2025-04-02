@@ -19,7 +19,7 @@ export async function SetupApp() {
     try {
         await pool.connect();
         console.log('Connected to PostgreSQL database');
-        
+
         app.listen(3000, () => {
             console.log('Server is running on port 3000');
         });

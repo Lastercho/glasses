@@ -12,7 +12,7 @@ class User {
         const client = await pool.connect();
         try {
             await client.query('BEGIN');
-            
+
             // Create address first
             const addressResult = await client.query(
                 'INSERT INTO addresses (street, city, country, postal_code) VALUES ($1, $2, $3, $4) RETURNING id',
@@ -20,7 +20,7 @@ class User {
             );
 
             const addressId = addressResult.rows[0].id;
-            
+
             // Hash password
             const saltRounds = 10;
             const passwordHash = await bcrypt.hash(userData.password, saltRounds);
@@ -43,14 +43,14 @@ class User {
 
     static async login(email, password) {
         const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-        
+
         if (result.rows.length === 0) {
             throw new Error('User not found');
         }
 
         const user = result.rows[0];
         const isValid = await bcrypt.compare(password, user.password_hash);
-        
+
         if (!isValid) {
             throw new Error('Invalid password');
         }
@@ -66,18 +66,18 @@ class User {
         const client = await pool.connect();
         try {
             await client.query('BEGIN');
-            
+
             // Get address_id before deleting user
             const userResult = await client.query('SELECT address_id FROM users WHERE id = $1', [userId]);
             if (userResult.rows.length === 0) {
                 throw new Error('User not found');
             }
-            
+
             const addressId = userResult.rows[0].address_id;
-            
+
             // Delete user
             await client.query('DELETE FROM users WHERE id = $1', [userId]);
-            
+
             // Delete associated address
             if (addressId) {
                 await client.query('DELETE FROM addresses WHERE id = $1', [addressId]);

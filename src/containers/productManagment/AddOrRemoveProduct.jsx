@@ -1,11 +1,11 @@
 import "../../css/addProduct.css";
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { useLocation } from "react-router";
 import { UserContext } from "../contexts/UserContext";
 import HandleAddProduct from "./HandleAddProduct";
 import HandleEditProduct from "./HandleEditProduct";
 
-export default function AddProduct() {
+export default function AddOrRemoveProduct() {
   const { token, id: userId } = useContext(UserContext);
   const location = useLocation();
   const editedProduct = location.state?.product || {};
@@ -16,8 +16,7 @@ export default function AddProduct() {
     price: editedProduct.price || "",
     image_url: editedProduct.image_url || "",
   });
-  console.log(editedProduct)
-
+  console.log(editedProduct);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,9 +29,16 @@ export default function AddProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (editedProduct.id) {
-      await HandleEditProduct(token, { ...product, id: editedProduct.id, user_id: editedProduct.user_id});
+      await HandleEditProduct(token, {
+        ...product,
+        id: editedProduct.id,
+        user_id: editedProduct.user_id,
+      });
     } else {
-      const addProduct = HandleAddProduct(token, { ...product, user_id: userId });
+      const addProduct = HandleAddProduct(token, {
+        ...product,
+        user_id: userId,
+      });
       await addProduct();
     }
     setProduct({ name: "", description: "", price: "", image_url: "" });
@@ -41,7 +47,9 @@ export default function AddProduct() {
   return (
     <div className="register-container">
       <div className="register-card">
-        <h2 className="register-title">{editedProduct.id ? "Edit Product" : "Add New Product"}</h2>
+        <h2 className="register-title">
+          {editedProduct.id ? "Edit Product" : "Add New Product"}
+        </h2>
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label">Name:</label>

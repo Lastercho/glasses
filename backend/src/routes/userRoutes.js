@@ -23,7 +23,7 @@ router.post('/register', async (req, res) => {
             message: 'User created successfully',
             user,
             token
-            
+
         });
     } catch (error) {
         res.status(400).json({
@@ -70,6 +70,6 @@ router.delete('/:userId', async (req, res) => {
     }
 });
 
-export default router; 
+export default router;
 
 

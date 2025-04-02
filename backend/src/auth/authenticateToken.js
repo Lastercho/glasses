@@ -8,12 +8,11 @@ export default function authenticateToken(req, res, next) {
 
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
         if (err) {
-            
+
 
             return res.sendStatus(403);
 
         }
-        console.log(user)
         req.user = user;
         next();
     });
