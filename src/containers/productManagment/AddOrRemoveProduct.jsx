@@ -1,16 +1,23 @@
 import "../../css/addProduct.css";
 import { useState, useContext } from "react";
+import { useLocation } from "react-router";
 import { UserContext } from "../contexts/UserContext";
 import HandleAddProduct from "./HandleAddProduct";
+import HandleEditProduct from "./HandleEditProduct";
 
 export default function AddProduct() {
-  const { token, id: userId } = useContext(UserContext); // Use `id` as `userId`
+  const { token, id: userId } = useContext(UserContext);
+  const location = useLocation();
+  const editedProduct = location.state?.product || {};
+  console.log(editedProduct);
   const [product, setProduct] = useState({
-    name: "",
-    description: "",
-    price: "",
-    image_url: "",
+    name: editedProduct.name || "",
+    description: editedProduct.description || "",
+    price: editedProduct.price || "",
+    image_url: editedProduct.image_url || "",
   });
+  console.log(editedProduct)
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,15 +29,19 @@ export default function AddProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const addProduct = HandleAddProduct(token, { ...product, user_id: userId }); // Pass `user_id`
-    await addProduct();
+    if (editedProduct.id) {
+      await HandleEditProduct(token, { ...product, id: editedProduct.id, user_id: editedProduct.user_id});
+    } else {
+      const addProduct = HandleAddProduct(token, { ...product, user_id: userId });
+      await addProduct();
+    }
     setProduct({ name: "", description: "", price: "", image_url: "" });
   };
 
   return (
     <div className="register-container">
       <div className="register-card">
-        <h2 className="register-title">Add New Product</h2>
+        <h2 className="register-title">{editedProduct.id ? "Edit Product" : "Add New Product"}</h2>
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label">Name:</label>
@@ -88,7 +99,7 @@ export default function AddProduct() {
                 />
               </svg>
             </span>
-            Add Product
+            {editedProduct.id ? "Edit Product" : "Add Product"}
           </button>
         </form>
       </div>
