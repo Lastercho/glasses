@@ -62,6 +62,7 @@ export default function CommentsSection() {
 
   const handlePageSizeChange = (value) => {
     setPageSize(value);
+    setCurrentPage(1);
   };
 
   return (
@@ -87,7 +88,7 @@ export default function CommentsSection() {
                         href="#"
                         onClick={() => showEditComment(comment)}
                         style={{
-                          display: comment.user_id === user?.id ? "" : "none",
+                          display: (comment.user_id === user?.id || user?.id === 1) ? "" : "none",
                         }}
                       >
                         EDIT
@@ -97,7 +98,7 @@ export default function CommentsSection() {
                         href="#"
                         onClick={() => handleDeleteComment(comment.id)}
                         style={{
-                          display: comment.user_id === user?.id ? "" : "none",
+                          display: (comment.user_id === user?.id || user?.id === 1) ? "" : "none",
                         }}
                       >
                         DELETE

@@ -63,11 +63,11 @@ export default function HeaderSection() {
               </li>
             </div>
             <div className="side">
-              <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  <img src="/images/search-icon.png" alt={""} />
-                </Link>
-              </li>
+              {/*<li className="nav-item">*/}
+              {/*  <Link className="nav-link" to="#">*/}
+              {/*    <img src="/images/search-icon.png" alt={""} />*/}
+              {/*  </Link>*/}
+              {/*</li>*/}
               <li className="nav-item active">
                 <Link
                   className="nav-link"
