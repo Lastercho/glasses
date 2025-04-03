@@ -16,13 +16,13 @@ export default function SectionFooter() {
               <div className="useful_link">
                 <ul>
                   <li>
-                    <a href="#">Video games</a>
+                    <a href="#">Sun Glasses</a>
                   </li>
                   <li>
-                    <a href="#">Remote control</a>
+                    <a href="#">Optic glasses</a>
                   </li>
                   <li>
-                    <a href="#">3d controller</a>
+                    <a href="#">Lenses</a>
                   </li>
                 </ul>
               </div>

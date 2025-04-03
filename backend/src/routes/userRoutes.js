@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
         const { email, password } = req.body;
         const user = await User.login(email, password);
         const token = createToken(user);
-        res.token = user;
+        res.token = token;
         res.json({
             message: 'Login successful',
             user,
