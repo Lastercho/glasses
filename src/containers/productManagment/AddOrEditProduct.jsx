@@ -10,14 +10,13 @@ export default function AddOrEditProduct() {
   const navigate = useNavigate();
   const location = useLocation();
   const editedProduct = location.state?.product || {};
-  console.log(editedProduct);
   const [product, setProduct] = useState({
     name: editedProduct.name || "",
     description: editedProduct.description || "",
     price: editedProduct.price || "",
     image_url: editedProduct.image_url || "",
   });
-  console.log(editedProduct);
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,6 +25,10 @@ export default function AddOrEditProduct() {
       [name]: value,
     }));
   };
+
+  const handleClose = () => {
+    navigate('/products')
+  } 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,9 +52,13 @@ export default function AddOrEditProduct() {
   return (
     <div className="register-container">
       <div className="register-card">
+        
+        <header className="close-header">
         <h2 className="register-title">
           {editedProduct.id ? "Edit Product" : "Add New Product"}
         </h2>
+            <button onClick={handleClose}>X</button>
+          </header>
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label">Name:</label>

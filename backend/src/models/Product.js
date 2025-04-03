@@ -33,9 +33,9 @@ class Product {
         return result.rows[0];
     }
 
-    static async getAll(limit, offset) {
+    static async getAll(limit, offset, orderBy = "created_at DESC") {
         const result = await pool.query(
-            'SELECT * FROM products WHERE deleted_at IS NULL ORDER BY created_at DESC LIMIT $1 OFFSET $2',
+            `SELECT * FROM products WHERE deleted_at IS NULL ORDER BY ${orderBy} LIMIT $1 OFFSET $2`,
             [limit, offset]
         );
         return result.rows;

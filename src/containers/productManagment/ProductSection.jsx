@@ -4,7 +4,7 @@ import { UserContext } from "../contexts/UserContext";
 
 import HandleDeleteProduct from "./HandleDeleteProduct";
 import FetchProducts from "./FetchProducts";
-import { Button } from "antd";
+import { Button, Select, Space } from "antd";
 import { useNavigate } from "react-router";
 
 export default function ProductSection() {
@@ -14,12 +14,14 @@ export default function ProductSection() {
   const [pageSize, setPageSize] = useState(6);
   const [product, setProduct] = useState({});
   const [details, setDetails] = useState(false);
+  const [sortOrder, setSortOrder] = useState("Newest");
+
   useEffect(() => {
     const fetchProducts = async () => {
-      await FetchProducts(setProducts, token, pageSize);
+      await FetchProducts(setProducts, token, pageSize, sortOrder);
     };
     fetchProducts();
-  }, [pageSize, token]);
+  }, [pageSize, token, sortOrder]);
 
   const startEditProduct = (editedProduct) => {
     navigate("/addproduct", { state: { product: editedProduct } });
@@ -35,7 +37,7 @@ export default function ProductSection() {
     token,
     async () => {
       const fetchProducts = async () => {
-        await FetchProducts(setProducts, token, pageSize);
+        await FetchProducts(setProducts, token, pageSize, sortOrder);
       };
       fetchProducts();
     },
@@ -44,6 +46,10 @@ export default function ProductSection() {
 
   const handlePageSizeChange = () => {
     setPageSize(pageSize + 6);
+  };
+
+  const handleChange = (value) => {
+    setSortOrder(value);
   };
 
   return (
@@ -57,6 +63,20 @@ export default function ProductSection() {
           readable content of a page when looking at its layout. The point of
           using Lorem
         </p>
+        <Space className="sorting">
+          <h4>Sort the products by:</h4>
+          <Select
+            defaultValue="Newest"
+            style={{ width: 120 }}
+            onChange={handleChange}
+            options={[
+              { value: "Newest", label: "Newest" },
+              { value: "Oldest", label: "Oldest" },
+              { value: "Highest price", label: "Highest price" },
+              { value: "Lowest price", label: "Lowest price" },
+            ]}
+          />
+        </Space>
         <div className="product_section_2">
           <div
             className="container-fluid bg-trasparent my-4 p-3"
@@ -150,7 +170,9 @@ export default function ProductSection() {
               </button>
               <button
                 className="btn btn-warning"
-                onClick={() => {handleDeleteProduct(product.id) , setDetails(false)}}
+                onClick={() => {
+                  handleDeleteProduct(product.id), setDetails(false);
+                }}
               >
                 Delete
               </button>

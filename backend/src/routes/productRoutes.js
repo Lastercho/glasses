@@ -41,13 +41,18 @@ router.delete('/:productId', authenticateToken, async (req, res) => {
     }
 });
 
-// Get all products with pagination
+// Get all products with pagination and sorting
 router.get('/', async (req, res) => {
-    const { page = 1, limit = 5 } = req.query;
+    const { page = 1, limit = 5, sort = "Newest" } = req.query;
     const offset = (page - 1) * limit;
 
+    let orderBy = "created_at DESC"; // Default sort order
+    if (sort === "Oldest") orderBy = "created_at ASC";
+    else if (sort === "Highest price") orderBy = "price DESC";
+    else if (sort === "Lowest price") orderBy = "price ASC";
+
     try {
-        const products = await Product.getAll(limit, offset);
+        const products = await Product.getAll(limit, offset, orderBy);
         const totalProducts = await Product.getTotalCount();
 
         res.json({

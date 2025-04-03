@@ -57,21 +57,24 @@ router.delete('/:commentId', authenticateToken, async (req, res) => {
     }
 });
 
-// Get all comments with pagination
+// Get all comments with pagination and sorting
 router.get('/', async (req, res) => {
-    const { page = 1, limit = 5 } = req.query;
+    const { page = 1, limit = 5, sort = "Newest" } = req.query;
     const offset = (page - 1) * limit;
 
+    let orderBy = "COALESCE(comments.modified_at, comments.created_at) DESC"; // Default sort order
+    if (sort === "Oldest") orderBy = "COALESCE(comments.modified_at, comments.created_at) ASC";
+
     try {
-        const result = await pool.query(`
-            SELECT comments.*, users.username AS username 
-            FROM comments 
-            JOIN users ON comments.user_id = users.id 
-            WHERE comments.deleted_at IS NULL
-            ORDER BY 
-                COALESCE(comments.modified_at, comments.created_at) DESC
-            LIMIT $1 OFFSET $2
-        `, [limit, offset]);
+        const result = await pool.query(
+            `SELECT comments.*, users.username AS username 
+             FROM comments 
+             JOIN users ON comments.user_id = users.id 
+             WHERE comments.deleted_at IS NULL
+             ORDER BY ${orderBy}
+             LIMIT $1 OFFSET $2`,
+            [limit, offset]
+        );
         const totalResult = await pool.query('SELECT COUNT(*) FROM comments WHERE deleted_at IS NULL');
         const totalComments = totalResult.rows[0].count;
 

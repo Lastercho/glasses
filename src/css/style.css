@@ -859,6 +859,9 @@ button {
   align-self: center;
 }
 .ant-card-extra {
+  display: flex; 
+}
+.ant-card-extra div {
   text-align: end;
 }
 
@@ -988,4 +991,14 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.sorting{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 1em 0 2em 0;
+}
+.sorting h4{
+  font-style: italic;
+  padding: 0;
 }

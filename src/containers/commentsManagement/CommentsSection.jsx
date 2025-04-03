@@ -15,17 +15,19 @@ export default function CommentsSection() {
   const [pageSize, setPageSize] = useState(5);
   const [editComment, setEditComment] = useState(false);
   const [comment, setComment] = useState({});
+  const [sortOrder, setSortOrder] = useState("Newest");
   const { TextArea } = Input;
 
   useEffect(() => {
-    fetchComments(currentPage, pageSize);
-  }, [currentPage, pageSize]);
+    fetchComments(currentPage, pageSize, sortOrder);
+  }, [currentPage, pageSize, sortOrder]);
 
   const fetchComments = FetchComments(
     setComments,
     setTotalComments,
     token,
-    pageSize
+    pageSize,
+    sortOrder
   );
 
   const handleAddComment = HandleAddComment(
@@ -43,7 +45,7 @@ export default function CommentsSection() {
 
   const handleEditComment = () => {
     HandleEditComment(token, comment).then(() => {
-      fetchComments(currentPage, pageSize);
+      fetchComments(currentPage, pageSize, sortOrder);
       setEditComment(false);
       setCurrentPage(1);
     });
@@ -65,6 +67,10 @@ export default function CommentsSection() {
     setCurrentPage(1);
   };
 
+  const handleSortChange = (value) => {
+    setSortOrder(value);
+  };
+
   return (
     <div className="comments_section layout_padding">
       <div className="container">
@@ -75,34 +81,59 @@ export default function CommentsSection() {
           minim veniam, quis nostrud
         </p>
         <div>
+            <Space className="sorting">
+              <h4>Sort the comments by:</h4>
+              <Select
+                defaultValue="Newest"
+                style={{ width: 120 }}
+                onChange={handleSortChange}
+                options={[
+                  { value: "Newest", label: "Newest" },
+                  { value: "Oldest", label: "Oldest" },
+                ]}
+              />
+            </Space>
           <section className="container">
             {comments &&
               comments.map((comment) => (
                 <Card
                   key={comment.id}
                   type="inner"
-                  title={comment.username}
+                  title={`User: ${comment.username}`}
                   extra={
                     <>
-                      <a
-                        href="#"
-                        onClick={() => showEditComment(comment)}
-                        style={{
-                          display: (comment.user_id === user?.id || user?.id === 1) ? "" : "none",
-                        }}
-                      >
-                        EDIT
-                      </a>
-                      &nbsp; &nbsp; | &nbsp; &nbsp;
-                      <a
-                        href="#"
-                        onClick={() => handleDeleteComment(comment.id)}
-                        style={{
-                          display: (comment.user_id === user?.id || user?.id === 1) ? "" : "none",
-                        }}
-                      >
-                        DELETE
-                      </a>
+                      <span>
+                       Date of comment: {new Date(comment.created_at).toLocaleDateString(
+                          "bg-BG"
+                        )}
+                      </span>
+                      <div>
+                        <a
+                          href="#"
+                          onClick={() => showEditComment(comment)}
+                          style={{
+                            display:
+                              comment.user_id === user?.id || user?.id === 1
+                                ? ""
+                                : "none",
+                          }}
+                        >
+                          EDIT
+                        </a>
+                        &nbsp; &nbsp; | &nbsp; &nbsp;
+                        <a
+                          href="#"
+                          onClick={() => handleDeleteComment(comment.id)}
+                          style={{
+                            display:
+                              comment.user_id === user?.id || user?.id === 1
+                                ? ""
+                                : "none",
+                          }}
+                        >
+                          DELETE
+                        </a>
+                      </div>
                     </>
                   }
                 >

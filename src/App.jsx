@@ -34,8 +34,10 @@ export default function App() {
           <Route path="/about" element={<AboutSection />} />
 
           <Route path="/products" element={<ProductSection />} />
-
-          <Route path="/addproduct" element={<AddOrEditProduct />} />
+          
+          <Route element={<AuthGuard />}>
+            <Route path="/addproduct" element={<AddOrEditProduct />} />
+          </Route>
 
           <Route path="/comments" element={<CommentsSection />} />
 
